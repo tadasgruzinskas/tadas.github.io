@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Gift</title>
+    <title>Valentine's Day</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             display: inline-block;
         }
-        input, select, button {
+        button {
             margin: 10px;
             padding: 10px;
             font-size: 16px;
@@ -27,40 +27,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Happy Valentine's Day!</h1>
-        <p>Choose your favorite things and pick a date:</p>
-        
-        <label for="favorite">Your Favorite Thing:</label>
-        <select id="favorite">
-            <option value="chocolates">Chocolates</option>
-            <option value="flowers">Flowers</option>
-            <option value="jewelry">Jewelry</option>
-            <option value="date-night">Date Night</option>
-        </select>
-        
-        <br>
-        <label for="date">Select a Date:</label>
-        <input type="date" id="date">
-        
-        <br>
-        <button onclick="submitChoice()">Submit</button>
-        
-        <p id="result"></p>
+        <h1>Will You Be My Valentine? ❤️</h1>
+        <button onclick="goToNextPage()">Yes</button>
     </div>
     
     <script>
-        function submitChoice() {
-            const favorite = document.getElementById("favorite").value;
-            const date = document.getElementById("date").value;
-            
-            if (!date) {
-                alert("Please select a date!");
-                return;
-            }
-            
-            document.getElementById("result").innerHTML = `You chose ${favorite} on ${date}! ❤️`;
+        function goToNextPage() {
+            window.location.href = "biostatistika.html";
         }
     </script>
 </body>
 </html>
-
