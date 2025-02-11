@@ -3,84 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stats With Love 💖📊</title>
+    <title>Valentine's Day Gift</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffe6f2;
-            color: #333;
             text-align: center;
+            background-color: #ffe6e6;
             padding: 20px;
         }
         .container {
             background: white;
-            border-radius: 10px;
             padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
         }
-        h1 {
-            color: #ff4081;
-        }
-        .note {
-            font-style: italic;
-            color: #d63384;
-            margin-bottom: 20px;
-        }
-        .code-block {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: left;
-            overflow-x: auto;
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Stats With Love 💖📊</h1>
-        <p class="note">"Learning statistics is like love – step by step, with patience and care, you'll master it!"</p>
+        <h1>Happy Valentine's Day!</h1>
+        <p>Choose your favorite things and pick a date:</p>
         
-        <h2>RStudio Shortcuts</h2>
-        <p>Boost your efficiency with these handy RStudio shortcuts:</p>
-        <ul>
-            <li><b>Cmd + Shift + P</b>: Open command palette</li>
-            <li><b>Cmd + Shift + C</b>: Comment/uncomment code</li>
-            <li><b>Cmd + C</b>: Copy text</li>
-            <li><b>Cmd + L</b>: Clear the console</li>
-            <li><b>Cmd + S</b>: Save file</li>
-            <li><b>Cmd + Enter</b>: Run selected code</li>
-        </ul>
+        <label for="favorite">Your Favorite Thing:</label>
+        <select id="favorite">
+            <option value="chocolates">Chocolates</option>
+            <option value="flowers">Flowers</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="date-night">Date Night</option>
+        </select>
         
-        <h2>R Code Examples</h2>
-        <div class="code-block">
-            <pre>
-# Print pi value
-pi  # π ≈ 3.14159...
-
-# Print e value
-exp(1)  # e ≈ 2.71828...
-
-# BMI Calculation
-76 / (1.79^2)  # [1] 23.7
-
-# Mathematical Expressions
-sqrt(2 + 3.3)^7 + log(6) + cos(pi * sqrt(2))  # [1] 344.2661
-abs(25 - 34)^4  # [1] 49
-exp(-1/2)  # [1] 0.6065
-exp(exp(1))  # [1] 15.154
-pi * 2.5^2  # [1] 19.63
-
-# Rounding Examples
-round(pi, 3)  # [1] 3.142
-signif(pi, 5)  # [1] 3.1416
-round(36920)  # [1] 36920
-round(121.49)  # [1] 121
-round(65001)  # [1] 65001
-            </pre>
-        </div>
-        <p class="note">"Every calculation is a step closer to understanding, just like every heartbeat brings us closer together." 💕</p>
+        <br>
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date">
+        
+        <br>
+        <button onclick="submitChoice()">Submit</button>
+        
+        <p id="result"></p>
     </div>
+    
+    <script>
+        function submitChoice() {
+            const favorite = document.getElementById("favorite").value;
+            const date = document.getElementById("date").value;
+            
+            if (!date) {
+                alert("Please select a date!");
+                return;
+            }
+            
+            document.getElementById("result").innerHTML = `You chose ${favorite} on ${date}! ❤️`;
+        }
+    </script>
 </body>
 </html>
+
