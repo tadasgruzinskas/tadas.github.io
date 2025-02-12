@@ -36,7 +36,7 @@
             const data = {};
             formData.forEach((value, key) => { data[key] = value; });
 
-            fetch("https://formspree.io/YOUR_EMAIL", { // Replace YOUR_EMAIL with your email
+            fetch("https://formspree.io/mail.tadasg@gmail.com", { // Replace YOUR_EMAIL with your email
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
