@@ -1,22 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine? 💖</title>
+    <title>Čia staigmenėlė tau ✨</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #ffe6e6; }
-        .container { width: 50%; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px gray; margin-top: 50px; }
-        button { padding: 10px; background: red; color: white; border: none; cursor: pointer; font-size: 18px; border-radius: 5px; }
-        button:hover { background: darkred; }
-        h2 { color: #ff3366; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: url('https://cdn.dribbble.com/userupload/21603418/file/original-1bf20077489beeac88818f2d4591390e.gif') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            width: 60%;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .star {
+            font-size: 32px;
+            color: #ffd700; /* Auksinė spalva */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background: #ff3366;
+            color: white;
+        }
+        .yes:hover {
+            background: #e62e5c;
+        }
+        .no {
+            background: white;
+            color: #ff3366;
+        }
+        .no:hover {
+            background: #ffcccc;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Will You Be My Valentine? 💘</h2>
-        <button onclick="location.href='flowers.html'">Yes! 💖</button>
-        <button onclick="document.getElementById('message').innerText='😢 Oh no... but I still love you! ❤️'">No 💔</button>
+        <h1><span class="star">✨</span> Čia staigmenėlė tau <span class="star">✨</span></h1>
+        <p>Ar nori sužinoti, kas tavęs laukia? 🥰</p>
+        <div class="button-container">
+            <button class="yes" onclick="location.href='flowers.html'">Taip! 💖</button>
+            <button class="no" onclick="document.getElementById('message').innerText='😢 Na, bet vistiek tave myliu!'">Ne 💔</button>
+        </div>
         <p id="message"></p>
     </div>
 </body>
