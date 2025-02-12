@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick Your Favorite Flower 🌸</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #ffe6e6; }
+        .container { width: 50%; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px gray; margin-top: 50px; }
+        button { padding: 10px; background: red; color: white; border: none; cursor: pointer; font-size: 18px; border-radius: 5px; }
+        button:hover { background: darkred; }
+        h2 { color: #ff3366; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Choose Your Favorite Flower 🌸</h2>
+        <form id="flowerForm">
+            <input type="radio" name="flower" value="Roses"> Roses 🌹<br>
+            <input type="radio" name="flower" value="Tulips"> Tulips 🌷<br>
+            <input type="radio" name="flower" value="Lilies"> Lilies 🌼<br>
+            <input type="radio" name="flower" value="Daisies"> Daisies 🌻<br>
+            <br>
+            <button type="button" onclick="saveAnswerAndNext('flower', 'plans.html')">Next ➡️</button>
+        </form>
+    </div>
+
+    <script>
+        function saveAnswerAndNext(question, nextPage) {
+            const selected = document.querySelector(`input[name="${question}"]:checked`);
+            if (selected) {
+                localStorage.setItem(question, selected.value);
+                window.location.href = nextPage;
+            } else {
+                alert("Please choose one!");
+            }
+        }
+    </script>
+</body>
+</html>

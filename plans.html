@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Shall We Do? ❤️</title>
+</head>
+<body>
+    <div class="container">
+        <h2>What Do You Want to Do Today? 💑</h2>
+        <form id="plansForm">
+            <input type="radio" name="plan" value="Walk"> Go for a walk 🌳<br>
+            <input type="radio" name="plan" value="Movie"> Watch a movie 🎬<br>
+            <input type="radio" name="plan" value="Dinner"> Romantic dinner 🍽️<br>
+            <br>
+            <button type="button" onclick="saveAnswerAndNext('plan', 'food.html')">Next ➡️</button>
+        </form>
+    </div>
+
+    <script>
+        function saveAnswerAndNext(question, nextPage) {
+            const selected = document.querySelector(`input[name="${question}"]:checked`);
+            if (selected) {
+                localStorage.setItem(question, selected.value);
+                window.location.href = nextPage;
+            } else {
+                alert("Please choose one!");
+            }
+        }
+    </script>
+</body>
+</html>
