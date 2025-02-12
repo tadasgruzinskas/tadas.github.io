@@ -43,45 +43,37 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
         }
         button {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             border: none;
             cursor: pointer;
             border-radius: 10px;
             transition: 0.3s;
-        }
-        .yes {
-            background: #ff3366;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #ff99cc;
             color: white;
+            font-weight: bold;
         }
-        .yes:hover {
-            background: #e62e5c;
+        button:hover {
+            background: #ff66a3;
         }
-        .no {
-            background: white;
-            color: #ff3366;
-        }
-        .no:hover {
-            background: #ffcccc;
-        }
-        #message {
-            margin-top: 20px;
-            font-size: 20px;
+        .penguin {
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1><span class="star">✨</span> Čia staigmenėlė tau <span class="star">✨</span></h1>
-        <p>Ar nori sužinoti, kas tavęs laukia? 🥰</p>
         <div class="button-container">
-            <button class="yes" onclick="location.href='flowers.html'">Taip! 💖</button>
-            <button class="no" onclick="document.getElementById('message').innerText='😢 Na, bet vistiek tave myliu!'">Ne 💔</button>
+            <button onclick="location.href='flowers.html'">
+                <span class="penguin">🐧</span> Toliau
+            </button>
         </div>
-        <p id="message"></p>
     </div>
 </body>
 </html>
