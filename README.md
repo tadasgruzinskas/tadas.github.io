@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day</title>
+    <title>Valentine's Quiz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffe6e6;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        button {
-            margin: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 50%; margin: auto; }
+        button { padding: 10px; background: red; color: white; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine? ❤️</h1>
-        <button onclick="goToNextPage()">Yes</button>
+        <h2>Valentine's Quiz 💖</h2>
+        <form id="quizForm">
+            <label>What's your favorite flower? 🌸</label><br>
+            <input type="radio" name="flower" value="Roses"> Roses 🌹<br>
+            <input type="radio" name="flower" value="Tulips"> Tulips 🌷<br>
+            <input type="radio" name="flower" value="Lilies"> Lilies 🌼<br>
+            <br>
+            <label>What's your favorite chocolate? 🍫</label><br>
+            <input type="radio" name="chocolate" value="Dark"> Dark Chocolate 🍫<br>
+            <input type="radio" name="chocolate" value="Milk"> Milk Chocolate 🍫<br>
+            <input type="radio" name="chocolate" value="White"> White Chocolate 🍫<br>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="responseMessage"></p>
     </div>
-    
+
     <script>
-        function goToNextPage() {
-            window.location.href = "biostatistika.html";
-        }
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+
+            fetch("https://formspree.io/YOUR_EMAIL", { // Replace YOUR_EMAIL with your email
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.ok ? "Thank you! ❤️" : "Oops! Something went wrong 😢")
+            .then(message => document.getElementById("responseMessage").innerText = message)
+            .catch(error => console.error("Error:", error));
+        });
     </script>
 </body>
 </html>
