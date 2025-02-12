@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ačiū, kad esi ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: url('https://media0.giphy.com/media/0NKFOrBtgW14YrAqwk/200w.gif?cid=6c09b952p8gy407hczrbrvl13a1ef94uo6b5td78oax0ex8h&ep=v1_gifs_search&rid=200w.gif&ct=g') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ačiū, kad esi! ❤️</h1>
+        <button onclick="sendAnswers()">Išsiųsti atsakymus 💌</button>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        function sendAnswers() {
+            const answers = {
+                "Kur rytoj eisim": localStorage.getItem("kur_rytoj_eisim"),
+                "Permanentinės apyrankės": localStorage.getItem("permanentines_apyrankes"),
+                "Penktadienis laisva": localStorage.getItem("penktadienis"),
+                "Ką žiūrėsim": localStorage.getItem("ka_ziuresim"),
+                "Ką valgysim": localStorage.getItem("ka_valgysim"),
+            };
+
+            fetch("https://formspree.io/f/mnnjbbez", { 
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(answers)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Nepavyko išsiųsti!");
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById("responseMessage").innerText = "Atsakymai išsiųsti! 💖";
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").innerText = "Įvyko klaida. 😢";
+            });
+        }
+    </script>
+</body>
+</html>

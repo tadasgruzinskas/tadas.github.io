@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ką norėsi žiūrėti? 🎬</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: url('https://png.pngtree.com/background/20210717/original/pngtree-simple-heart-shaped-abstract-seamless-pattern-picture-image_1431385.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            width: 60%;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+            background: #ff99cc;
+            color: white;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ff66a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ką nori žiūrėti vakare? 🎬</h1>
+        <button onclick="saveAnswerAndNext('ka_ziuresim', 'Samošką', 'food-choice.html')">Samošką 🎥</button>
+        <button onclick="saveAnswerAndNext('ka_ziuresim', 'K-drama', 'food-choice.html')">K-dramą 🎭</button>
+        <button onclick="saveAnswerAndNext('ka_ziuresim', 'Abu', 'food-choice.html')">Abu! 😍</button>
+    </div>
+
+    <script>
+        function saveAnswerAndNext(question, answer, nextPage) {
+            localStorage.setItem(question, answer);
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>

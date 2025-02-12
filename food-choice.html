@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ką norėsi valgyti? 🍽️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: url('https://phoneky.co.uk/thumbs/screensavers/down/original/loveheartb_syq2ees8.gif') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            width: 60%;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+            background: #ff99cc;
+            color: white;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ff66a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ką norėsi valgyti? 🍽️</h1>
+        <button onclick="saveAnswerAndNext('ka_valgysim', 'Sušius', 'thank-you.html')">Sušius 🍣</button>
+        <button onclick="saveAnswerAndNext('ka_valgysim', 'Pica', 'thank-you.html')">Pica 🍕</button>
+        <button onclick="saveAnswerAndNext('ka_valgysim', 'Wok', 'thank-you.html')">Wok 🍜</button>
+        <button onclick="saveAnswerAndNext('ka_valgysim', 'Nuspręsim vėliau', 'thank-you.html')">Nuspręsim vėliau 🤔</button>
+    </div>
+
+    <script>
+        function saveAnswerAndNext(question, answer, nextPage) {
+            localStorage.setItem(question, answer);
+            window.location.href = nextPage;
+        }
+    </script>
+</body>
+</html>
